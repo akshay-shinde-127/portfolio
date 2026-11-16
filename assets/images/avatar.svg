@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161c24" />
+      <stop offset="100%" stop-color="#10141a" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4d82f3" />
+      <stop offset="100%" stop-color="#a371f7" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0a97a" />
+      <stop offset="100%" stop-color="#c68a5c" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" fill="url(#bgGrad)" />
+
+  <!-- Technical Circuit Lines & Grid Backdrop -->
+  <g opacity="0.25" stroke="#4d82f3" stroke-width="1.5" stroke-dasharray="4 4">
+    <circle cx="200" cy="200" r="160" />
+    <circle cx="200" cy="200" r="120" />
+    <line x1="200" y1="20" x2="200" y2="380" />
+    <line x1="20" y1="200" x2="380" y2="200" />
+  </g>
+
+  <!-- Glowing Outer Accent Ring -->
+  <circle cx="200" cy="200" r="145" fill="none" stroke="url(#accentGrad)" stroke-width="3" opacity="0.6" filter="url(#glow)" />
+
+  <!-- Avatar Silhouette / Stylized Portrait -->
+  <g id="character">
+    <!-- Dark Tech Jacket -->
+    <path d="M90 380 C90 300 130 270 200 270 C270 270 310 300 310 380 Z" fill="#1e2632" stroke="#2c384a" stroke-width="2" />
+    
+    <!-- Inner Shirt / Collar with Accent Line -->
+    <path d="M165 270 L200 320 L235 270 Z" fill="#10141a" />
+    <path d="M190 275 L200 315 L210 275" stroke="#4d82f3" stroke-width="2" fill="none" />
+
+    <!-- Neck -->
+    <rect x="175" y="220" width="50" height="60" rx="8" fill="url(#skinGrad)" />
+    <path d="M175 255 C190 265 210 265 225 255 L225 280 L175 280 Z" fill="#b07548" opacity="0.4" />
+
+    <!-- Head / Face -->
+    <ellipse cx="200" cy="180" rx="55" ry="65" fill="url(#skinGrad)" />
+
+    <!-- Well-groomed Beard & Mustache -->
+    <path d="M150 180 C150 235 170 252 200 252 C230 252 250 235 250 180 C242 195 235 200 220 200 C210 192 190 192 180 200 C165 200 158 195 150 180 Z" fill="#1b1c20" />
+    <path d="M185 205 C195 200 205 200 215 205 C210 212 190 212 185 205 Z" fill="#1b1c20" />
+
+    <!-- Stylish Hair -->
+    <path d="M142 170 C140 120 160 100 200 100 C240 100 260 120 258 170 C252 140 240 130 200 130 C160 130 148 140 142 170 Z" fill="#1b1c20" />
+
+    <!-- Eyes & Eyebrows -->
+    <path d="M165 155 Q178 152 188 155" stroke="#1b1c20" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    <path d="M212 155 Q222 152 235 155" stroke="#1b1c20" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    <circle cx="178" cy="168" r="4.5" fill="#1b1c20" />
+    <circle cx="222" cy="168" r="4.5" fill="#1b1c20" />
+    <circle cx="180" cy="166" r="1.5" fill="#ffffff" />
+    <circle cx="224" cy="166" r="1.5" fill="#ffffff" />
+
+    <!-- Modern Minimalist QA Tech Glasses -->
+    <rect x="156" y="156" width="38" height="24" rx="6" fill="rgba(77, 130, 243, 0.15)" stroke="#4d82f3" stroke-width="2.5" />
+    <rect x="206" y="156" width="38" height="24" rx="6" fill="rgba(77, 130, 243, 0.15)" stroke="#4d82f3" stroke-width="2.5" />
+    <line x1="194" y1="168" x2="206" y2="168" stroke="#4d82f3" stroke-width="2.5" />
+    <line x1="145" y1="168" x2="156" y2="168" stroke="#4d82f3" stroke-width="2" />
+    <line x1="244" y1="168" x2="255" y2="168" stroke="#4d82f3" stroke-width="2" />
+  </g>
+
+  <!-- Technical Telemetry Badge Overlay -->
+  <g transform="translate(140, 340)">
+    <rect width="120" height="26" rx="13" fill="#161c24" stroke="#4d82f3" stroke-width="1.5" />
+    <text x="60" y="17" fill="#4d82f3" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">QA · AGENTIC</text>
+  </g>
+</svg>
