@@ -12,7 +12,7 @@
     "test:headed": "playwright test --headed",
     "test:report": "playwright show-report reports/html",
     "test:update-snapshots": "playwright test --update-snapshots",
-    "playwright:install": "playwright install --with-deps chromium"
+    "playwright:install": "playwright install"
   },
   "devDependencies": {
     "@playwright/test": "^1.65.0",
