@@ -7,8 +7,8 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 2 : undefined,
+  retries: process.env.CI ? 1 : 0,
+  workers: process.env.CI ? 4 : undefined,
   timeout: 30000,
   expect: {
     timeout: 5000,
@@ -44,11 +44,11 @@ export default defineConfig({
     },
     {
       name: 'mobile-chrome',
-      use: { ...devices['Pixel 7'] },
+      use: { ...devices['Pixel 8'] },
     },
     {
       name: 'mobile-safari',
-      use: { ...devices['iPhone 14'] },
+      use: { ...devices['iPhone 18'] },
     },
   ],
   // Only launch local Node server when not targeting an external live URL

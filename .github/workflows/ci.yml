@@ -46,7 +46,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright Browsers with OS Dependencies
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps
 
       - name: Execute Tests (Local Server Target)
         if: github.event_name != 'schedule' && (github.event.inputs.target == 'local' || github.event.inputs.target == null)
