@@ -37,18 +37,17 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
     {
       name: 'mobile-chrome',
-      use: { ...devices['Pixel 8'] },
+      use: { ...devices['Pixel 8'], deviceScaleFactor: 1 },
     },
     {
       name: 'mobile-safari',
-      use: { ...devices['iPhone 18'] },
+      use: { ...devices['iPhone 18'], deviceScaleFactor: 1 },
     },
   ],
   // Only launch local Node server when not targeting an external live URL

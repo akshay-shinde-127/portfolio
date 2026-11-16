@@ -29,10 +29,10 @@ test.describe('Navigation, Scrollspy & Links', () => {
 
   test('CV download buttons trigger proper PDF file download', async ({ page }) => {
     const headerCvBtn = page.locator('a.btn-cv');
-    await expect(headerCvBtn).toHaveAttribute('href', /assets\\\/Akshay_Shinde_Resume\\\.pdf/);
+    await expect(headerCvBtn).toHaveAttribute('href', "assets/Akshay_Shinde_Resume.pdf");
     await expect(headerCvBtn).toHaveAttribute('download', 'Akshay_Shinde_Resume.pdf');
     const heroCvBtn = page.locator('a.btn-secondary:has-text("Download CV")');
-    await expect(heroCvBtn).toHaveAttribute('href', /assets\\\/Akshay_Shinde_Resume\\\.pdf/);
+    await expect(heroCvBtn).toHaveAttribute('href', "assets/Akshay_Shinde_Resume.pdf");
   });
 
   test('external social links have secure rel and target attributes', async ({ page }) => {

@@ -49,9 +49,10 @@ test.describe('Interactive Widgets & UI Behaviors', () => {
     ]);
   });
 
-  test('copy to clipboard buttons provide instant feedback', async ({ page, context }) => {
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-    const copyBtn = new CopyButton(page, page.locator('.copy-btn[data-copy="akshayshinde127@gmail.com"]'));
+  test('copy to clipboard buttons provide instant feedback', async ({ page, context, browserName }) => {
+    if (browserName !== 'webkit') {
+      await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    } const copyBtn = new CopyButton(page, page.locator('.copy-btn[data-copy="akshayshinde127@gmail.com"]'));
     await copyBtn.clickAndExpectFeedback();
   });
 

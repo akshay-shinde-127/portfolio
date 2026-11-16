@@ -97,7 +97,7 @@ export class SkillsFilter extends BasePage {
     await expect(this.skillCards).toHaveCount(count);
     for (let i = 0; i < count; i++) await expect(this.skillCards.nth(i)).toBeVisible();
   }
-  async applyFilter(filter: string) { await this.filterBtns.locator(`.filter-btn[data-filter="${filter}"]`).click(); }
+  async applyFilter(filter: string) { await this.page.locator(`.filter-btn[data-filter="${filter}"]`).click(); }
   async expectVisibleCards(titles: string[]) {
     const visible = this.page.locator('.skill-category-card:visible');
     await expect(visible).toHaveCount(titles.length);
