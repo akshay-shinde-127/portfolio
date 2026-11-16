@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio and automated test suite for Akshay Shinde",
+  "scripts": {
+    "serve": "node scripts/serve.mjs 8000",
+    "test": "playwright test",
+    "test:local": "playwright test",
+    "test:live": "BASE_URL=https://akshay-shinde-127.github.io/portfolio playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report reports/html",
+    "test:update-snapshots": "playwright test --update-snapshots",
+    "playwright:install": "playwright install --with-deps chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@axe-core/playwright": "^4.10.1",
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}
