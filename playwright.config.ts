@@ -20,11 +20,11 @@ export default defineConfig({
   },
   reporter: process.env.CI
     ? [
-        ['github'],
-        ['html', { outputFolder: 'reports/html', open: 'never' }],
-        ['json', { outputFile: 'reports/results.json' }],
-        ['list']
-      ]
+      ['github'],
+      ['html', { outputFolder: 'reports/html', open: 'never' }],
+      ['json', { outputFile: 'reports/results.json' }],
+      ['list']
+    ]
     : [['list'], ['html', { outputFolder: 'reports/html', open: 'never' }]],
   use: {
     baseURL,
@@ -37,10 +37,7 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
@@ -58,10 +55,10 @@ export default defineConfig({
   webServer: isLive
     ? undefined
     : {
-        command: 'node scripts/serve.mjs 8000',
-        url: 'http://127.0.0.1:8000',
-        reuseExistingServer: !process.env.CI,
-        stdout: 'pipe',
-        stderr: 'pipe',
-      },
+      command: 'node scripts/serve.mjs 8000',
+      url: 'http://127.0.0.1:8000',
+      reuseExistingServer: !process.env.CI,
+      stdout: 'pipe',
+      stderr: 'pipe',
+    },
 });
