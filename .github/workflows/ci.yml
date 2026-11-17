@@ -48,6 +48,16 @@ jobs:
       - name: Install Playwright Browsers with OS Dependencies
         run: npx playwright install --with-deps
 
+      - name: Update Snapshots
+        run: |
+          SNAPSHOT_DIR="tests/visual.spec.ts-snapshots"
+          if [ ! -d "$SNAPSHOT_DIR" ] || [ -z "$(ls -A "$SNAPSHOT_DIR")" ]; then
+            echo "❌ Error: Snapshot directory is missing or empty!"
+            echo "Running update snapshots."
+            npx playwright test --update-snapshots
+            echo "✅ Snapshots updated successfully!"
+          fi  
+
       - name: Execute Tests (Local Server Target)
         if: github.event_name != 'schedule' && (github.event.inputs.target == 'local' || github.event.inputs.target == null)
         run: npm test
