@@ -50,7 +50,7 @@ jobs:
 
       - name: Execute Tests (Local Server Target)
         if: github.event_name != 'schedule' && (github.event.inputs.target == 'local' || github.event.inputs.target == null)
-        run: npm run test:update-snapshots && npm test
+        run: npm test
 
       - name: Execute Tests (Live GitHub Pages Target)
         if: github.event_name == 'schedule' || github.event.inputs.target == 'live'

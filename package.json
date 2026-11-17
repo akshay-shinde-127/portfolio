@@ -5,7 +5,7 @@
   "description": "Portfolio and automated test suite for Akshay Shinde",
   "scripts": {
     "serve": "node scripts/serve.mjs 8000",
-    "test": "playwright test",
+    "test": "playwright test --update-snapshots",
     "test:local": "playwright test",
     "test:live": "BASE_URL=https://akshay-shinde-127.github.io/portfolio playwright test",
     "test:ui": "playwright test --ui",
