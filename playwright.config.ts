@@ -42,10 +42,6 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
     {
-      name: 'mobile-chrome',
-      use: { ...devices['Pixel 8'], deviceScaleFactor: 1 },
-    },
-    {
       name: 'mobile-safari',
       use: { ...devices['iPhone 18'], deviceScaleFactor: 1 },
     },
